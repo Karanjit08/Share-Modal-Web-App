@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper{
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: BackgroundAnimation 5s ease infinite;
+}
+
+@keyframes BackgroundAnimation{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card{
+    min-height: 450px;
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+    border-radius: 25px;
+    border: 1px solid white;
+    opacity: .8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly
+}
+
+.profile-img{
+    border-radius: 50%;   
+}
+.user-name h2{
+    font-size: 2rem;
+
+}
+.user-profession h3{
+    font-size: 1.5rem;
+}
+
+.profile-buttons{
+    width: 400px;
+    height: 38px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.share-profile-btn{
+    width: 150px;
+    height: 38px;
+    background-color: rgba(0,0,0,.5);
+    border-radius: 10px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.share-profile-btn .share-icon{
+    fill: white; /* Default icon color */
+    transition: fill 0.5s ease; /* Smooth transition for icon color */
+}
+.share-profile-btn:hover{
+    background-color: white;
+    color: black;
+}
+.share-profile-btn:hover .share-icon{
+    fill: black;
+}
+
+
+.follow-btn{
+    width: 150px;
+    height: 38px;
+    background-color: rgba(0,0,0,.5);
+    border-radius: 10px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.follow-btn:hover{
+    background-color:white;
+    color: black;
+}
+
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 500ms ease-in-out;
+    z-index: 10;
+    width: 500px;
+    height: 200px;
+    border-radius: 25px;
+    border: 2px solid #ffffff59;
+    background: #00000088;
+    color: #fff;
+    backdrop-filter: blur(10px);
+}
+.modal.active{
+    transform: translate(-50%,-50%) scale(1.5);
+}
+
+.modal-header{
+    height: 50px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    border-bottom: 2px solid #ffffff59;
+    padding: 0px 15px;
+}
+.modal-header .modal-title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button{
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body{
+    padding: 10px 15px;
+}
+
+#overlay{
+    position: fixed;
+    transition: 500ms ease-in-out;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active{
+    pointer-events: all;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+/***  RESPONSIVENESS FOR MOBILE & TABLETS ***/
+
+/*** 1) TABLETS ***/
+
+@media only screen and (max-width: 700px){
+    .profile-card{
+        min-height: 450px;
+        min-width: 400px;
+        background-color: rgba(0,0,0,.5);
+        color: #fff;
+        border-radius: 25px;
+        border: 1px solid white;
+        opacity: .8;
+    }
+
+}
+
+/*** 2) MOBILES ***/
+@media only screen and (max-width: 500px){
+    .profile-card{
+        min-height: 420px;
+        min-width: 320px;
+        background-color: rgba(0,0,0,.5);
+        color: #fff;
+        border-radius: 25px;
+        border: 1px solid white;
+        opacity: .8;
+    }
+    .profile-buttons{
+        width: 400px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
