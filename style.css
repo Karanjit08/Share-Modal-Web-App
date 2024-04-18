@@ -1,10 +1,12 @@
 *{
     margin: 0;
     padding: 0;
+ 
 }
 
 #wrapper{
     min-height: 100vh;
+    overflow-x: hidden;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: BackgroundAnimation 5s ease infinite;
@@ -143,8 +145,85 @@
 }
 
 .modal-body{
+    height: 150px;
     padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    
 }
+.modal-body-1{
+    width: 400px;
+    height: 40px;
+    font-size: 0.94rem;
+    font-weight: bold;
+}
+.modal-body-2{
+    
+    height: 80px;
+    /* background-color:black; */
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+
+#modal-btns{
+    margin-top: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.facebook-btn{
+    border: 1px solid rgb(34, 34, 233);
+    font-size: 1.5rem;
+    transition: background-color 0.5s ease;
+}
+.facebook-btn:hover{
+    background-color: rgb(34, 34, 233);
+}
+.twitter-btn{
+    border: 1px solid rgb(6, 131, 240);
+    font-size: 1.5rem;
+    transition: background-color 0.5s ease;
+}
+.twitter-btn:hover{
+    background-color: rgb(6, 131, 240);
+}
+.insta-btn{
+    border: 1px solid rgb(234, 7, 193);
+    font-size: 1.5rem;
+    transition: background-color 0.5s ease;
+}
+.insta-btn:hover{
+    background-color: rgb(234, 7, 193);
+}
+.whatapp-btn{
+    border: 1px solid rgb(6, 239, 79);
+    font-size: 1.5rem;
+    transition: background-color 0.5s ease;
+}
+.whatapp-btn:hover{
+    background-color: rgb(6, 239, 79);
+}
+.telegram-btn{
+    border: 1px solid rgb(6, 131, 240);
+    font-size: 1.5rem;
+    transition: background-color 0.5s ease;
+}
+.telegram-btn:hover{
+    background-color: rgb(6, 131, 240);
+}
+
+
+
+
+
+
+
+
+
 
 #overlay{
     position: fixed;
@@ -207,5 +286,51 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+    }
+
+    .modal{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) scale(0);
+        transition: 500ms ease-in-out;
+        z-index: 10;
+        width: 250px;
+        height: 220px;
+        border-radius: 25px;
+        border: 2px solid #ffffff59;
+        background: #00000088;
+        color: #fff;
+        backdrop-filter: blur(10px);
+    }
+
+    .modal-header{
+        height: 30px;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        border-bottom: 1px solid #ffffff59;
+        padding: 0px 15px;
+    }
+    .modal-header .modal-title{
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+    .modal-header .close-button{
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+    .modal-body{
+        height: 130px;
+        padding: 10px 15px;
+    }
+    
+    .modal-body-2{
+        height: 80px;
+        /* background-color:black; */
+        display: flex;
+        justify-content:space-between;
+        flex-wrap: wrap;
     }
 }
